@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en"
+>
+<head>
+    <title>期中協同查驗與自評 - 2017Spring 協同產品設計實習 (虎尾科大MDE)</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="./midterm-collaboration-evaluation.html">
+
+        <meta name="author" content="yen" />
+        <meta name="keywords" content="v-rep,w9" />
+        <meta name="description" content="window.onload=function(){ // 設定 data/py 為共用程式路徑 brython({debug:1, pythonpath:[&#39;./../data/py&#39;]}); } from browser import document as doc from browser import html import math # 導入 fourbar import fourbar # 準備繪圖畫布 canvas = doc[&#34;fourbar&#34;] ctx = canvas.getContext(&#34;2d&#34;) # y 軸向上移動 pixel 數 y_lift = 150 # 將 y 轉為向上為正 def newy(y): return ..." />
+
+        <meta property="og:site_name" content="2017Spring 協同產品設計實習 (虎尾科大MDE)" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="期中協同查驗與自評"/>
+        <meta property="og:url" content="./midterm-collaboration-evaluation.html"/>
+        <meta property="og:description" content="window.onload=function(){ // 設定 data/py 為共用程式路徑 brython({debug:1, pythonpath:[&#39;./../data/py&#39;]}); } from browser import document as doc from browser import html import math # 導入 fourbar import fourbar # 準備繪圖畫布 canvas = doc[&#34;fourbar&#34;] ctx = canvas.getContext(&#34;2d&#34;) # y 軸向上移動 pixel 數 y_lift = 150 # 將 y 轉為向上為正 def newy(y): return ..."/>
+        <meta property="article:published_time" content="2017-04-15" />
+            <meta property="article:section" content="Course" />
+            <meta property="article:tag" content="v-rep" />
+            <meta property="article:tag" content="w9" />
+            <meta property="article:author" content="yen" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/monokai.css" rel="stylesheet">
+    <link href="./theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+
+        <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="2017Spring 協同產品設計實習 (虎尾科大MDE) ATOM Feed"/>
+
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="https://coursemdetw.github.io/project_site_files/files/syntaxhighlighter/shBrushBash.js"></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shCore.css";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://chiamingyen.github.io/kmolab_data/files/syntaxhighlighter/css/shThemeDefault.css?ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+2017Spring 協同產品設計實習 (虎尾科大MDE)            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="./pages/about/">
+                             About
+                          </a></li>
+                        <li class="active">
+                            <a href="./category/course.html">Course</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="./search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+              <li><a href="./archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="./midterm-collaboration-evaluation.html"
+                       rel="bookmark"
+                       title="Permalink to 期中協同查驗與自評">
+                        期中協同查驗與自評
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-04-15T11:00:00+08:00"> Sat 15 April 2017</time>
+    </span>
+            <span class="label label-default">By</span>
+            <a href="./author/yen.html"><i class="fa fa-user"></i> yen</a>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="./tag/v-rep.html">v-rep</a>
+        /
+	<a href="./tag/w9.html">w9</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <!-- 導入 Brython 標準程式庫 -->
+
+<script src="../data/Brython-3.3.1/brython.js"></script>
+
+<!-- 啟動 Brython -->
+
+<script>
+window.onload=function(){
+// 設定 data/py 為共用程式路徑
+brython({debug:1, pythonpath:['./../data/py']});
+}
+</script>
+
+<!-- 以下實際利用  Brython 畫四連桿 trace point 路徑-->
+
+<canvas id="fourbar" width="800" height="600"></canvas>
+
+<script type="text/python3">
+from browser import document as doc
+from browser import html
+import math
+# 導入 fourbar 
+import fourbar
+# 準備繪圖畫布
+canvas = doc["fourbar"]
+ctx = canvas.getContext("2d")
+
+# y 軸向上移動 pixel 數
+y_lift = 150
+
+# 將 y 轉為向上為正
+def newy(y):
+    return (canvas.height - y - y_lift)
+
+# 所有尺寸放大倍數
+ratio = 4
+
+# 畫線函式
+def line(ctx, ax, ay, bx, by, width=1, color='blue'):
+    ctx.beginPath()
+    ctx.strokeStyle = color
+    ctx.lineWidth = width
+    # 直接轉換 y 座標
+    ctx.moveTo(ax*ratio, newy(ay*ratio))
+    ctx.lineTo(bx*ratio, newy(by*ratio))
+    ctx.stroke()
+    ctx.closePath()
+
+def getT(x1, y1, x2, y2):
+    x = x2 - x1
+    y = y2 - y1
+    if (math.fabs(x) < math.pow(10,-100)):
+        if(y < 0.0):
+            return (-math.pi/2)
+        else:
+            return (math.pi/2)
+    else:
+        return math.atan2(y, x)
+
+def link(ctx, ax, ay, bx, by, width=1, color='blue'):
+    hole = 5
+    radius = 10
+    length = math.sqrt((ax*ratio-bx*ratio)**2+(newy(ay*ratio)-newy(by*ratio))**2)
+    # 儲存先前的繪圖狀態
+    ctx.save()
+    ctx.translate(ax*ratio, newy(ay*ratio))
+    ctx.rotate(-math.pi*0.5 + getT(ax*ratio, newy(ay*ratio), bx*ratio, newy(by*ratio)))
+    # 必須配合畫在 y 軸上的 Link, 進行座標轉換, 也可以改為畫在 x 軸上...
+    ctx.beginPath()
+    ctx.strokeStyle = color
+    ctx.lineWidth = width
+    ctx.moveTo(0,0)
+    ctx.arc(0, 0, hole, 0, 2*math.pi, True)
+    ctx.stroke()
+    ctx.moveTo(0,length)
+    ctx.beginPath()
+    ctx.arc(0,length, hole, 0, 2*math.pi, True)
+    ctx.stroke()
+    ctx.moveTo(0,0)
+    ctx.beginPath()
+    ctx.arc(0,0, radius, 0, math.pi, True)
+    ctx.moveTo(0+radius,0)
+    ctx.lineTo(0+radius,0+length)
+    ctx.stroke()
+    ctx.moveTo(0,0+length)
+    ctx.beginPath()
+    ctx.arc(0, 0+length, radius, math.pi, 0, True)
+    ctx.moveTo(0-radius,0+length)
+    ctx.lineTo(0-radius,0)
+    ctx.stroke()
+    ctx.restore()
+
+degree = math.pi/180
+ax = 60
+ay = 0
+bx = 120
+by = 0
+bac = 0
+ac = 30
+cd = 50
+db = 60
+ce = 50
+ed = 50
+
+# 利用 fourbar 物件建立案例
+f = fourbar.fourbar(ax = 60, ay = 0, bx = 120, by = 0, bac = 0, ac = 30, cd = 50, db = 60, ce = 50, ed = 50)
+
+# 兩條軸線
+#line(ctx, 0, 0, 0, 100, 3, 'blue')
+#line(ctx, 0, 0, 100, 0, 3, 'blue')
+# base line
+#line(ctx, ax, ay, bx, by, 3, 'red')
+f.bac = 0
+for j in range(10):
+    f.ce = 50 - j *3
+    # link1
+    link(ctx, f.ax, f.ay, f.cx, f.cy, 1, 'blue')
+    # link2
+    link(ctx, f.cx, f.cy, f.dx, f.dy, 1, 'blue')
+    # link3
+    link(ctx, f.dx, f.dy, f.bx, f.by, 1, 'blue')
+    # triangle sides
+    line(ctx, f.cx, f.cy, f.ex, f.ey, 1, 'black')
+    line(ctx, f.dx, f.dy, f.ex, f.ey, 1, 'black')
+    # 進入 e 點輪廓繪製流程
+    # f.bac = 0 開始繪圖
+    # 直接轉換 y 座標
+    ctx.moveTo(f.ex*ratio, newy(f.ey*ratio))
+    ctx.beginPath()
+    ctx.strokeStyle = 'red'
+    ctx.lineWidth = 1
+    for i in range(0, 365, 5):
+        f.bac = i *degree
+        ctx.lineTo(f.ex*ratio, newy(f.ey*ratio))
+    ctx.stroke()
+    ctx.closePath()
+</script>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Recent Posts</span></h4>
+                <ul class="list-group" id="recentposts">
+                    <li class="list-group-item">
+                        <a href="./midterm-collaboration-evaluation.html">
+                            期中協同查驗與自評
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="./categories.html"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Categories</span></h4></a>
+                <ul class="list-group" id="categories">
+                    <li class="list-group-item">
+                        <a href="./category/course.html">
+                            <i class="fa fa-folder-open fa-lg"></i> Course
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="list-group-item"><a href="./tags.html"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+                <ul class="list-group list-inline tagcloud" id="tags">
+                </ul>
+            </li>
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/DandyDev/pelican-bootstrap3/" target="_blank">
+                pelican-bootstrap3
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/getpelican/pelican-plugins" target="_blank">
+                pelican-plugins
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="https://github.com/Tipue/Tipue-Search" target="_blank">
+                Tipue search
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2017 KMOL
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- for https://github.com/jsor/lity lightbox video popup -->
+
+<link href="./theme/css/lity.css" rel="stylesheet">
+
+<script src="./theme/js/lity.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
+
+
+</body>
+</html>
